@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "d3b9ddf3-f06b-4c50-81a4-730d671b45ff",
+		"name": "Mobile Validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30214546"
+	},
+	"item": [
+		{
+			"name": "Validate Mobile Number",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": ""
+					},
+					{
+						"key": "",
+						"value": ""
+					},
+					{
+						"key": "",
+						"value": ""
+					},
+					{
+						"key": "",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "localhost:8001/api/mobile/validate?number=9613333333",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"mobile",
+						"validate"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "9613333333"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Number",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": ""
+							},
+							{
+								"key": "",
+								"value": ""
+							},
+							{
+								"key": "",
+								"value": ""
+							},
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"url": {
+							"raw": "localhost:8001/api/mobile/validate?number=i",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"mobile",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "i"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Set-Cookie",
+							"value": "JSESSIONID=9177113A1B39B6EC009F6D9A08806B9E; Path=/; HttpOnly"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jul 2024 07:33:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid mobile number : i"
+				},
+				{
+					"name": "Valid Number",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": ""
+							},
+							{
+								"key": "",
+								"value": ""
+							},
+							{
+								"key": "",
+								"value": ""
+							},
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"url": {
+							"raw": "localhost:8001/api/mobile/validate?number=9613333333",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"mobile",
+								"validate"
+							],
+							"query": [
+								{
+									"key": "number",
+									"value": "9613333333"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 18 Jul 2024 07:34:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"countryCode\": \"LB\",\n    \"countryName\": \"Lebanon\",\n    \"operatorName\": \"Mobile Interim Company 1 sal (MIC1)\",\n    \"mobileNumber\": \"9613333333\",\n    \"valid\": true\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "password",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
